@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import BookContext from '../Context/BookContext';
 
 const BookCard = ({book, index}) => {
+    const { bookData, loading, error, query, setQuery, selected, setSelected } = useContext(BookContext);
 
-    const expandBook = ()=>{
-        alert('hiiiii expamd book')
+    const expandBook = (e)=>{
+        setSelected(e.target.parentNode.parentNode.id);
     }
 
   return (
-    <div className='card' key={index} >
+    <div className='card' id={index} >
         <div className='card-img'>
             <img src={book.volumeInfo.imageLinks.smallThumbnail} className='book-img'/>
         </div>

@@ -27,7 +27,7 @@ console.log(bookData)
       <h2>More Books</h2>
       <div className="container">
       {mainData.map((book,index) =>( index>=3 && (
-        <div key={index}>
+        <div id={index}>
           <img src={book.volumeInfo.imageLinks.smallThumbnail} className='booksThumbnail'/>
         </div>
       )))}

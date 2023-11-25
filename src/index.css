@@ -131,3 +131,7 @@ background-color: rgba(137, 43, 226, 0.456);
   border: 1px solid white;
   color: white;
 }
+.readBtn:hover{
+  background-color: white;
+  color: black;
+}

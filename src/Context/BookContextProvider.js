@@ -6,6 +6,7 @@ const BookContextProvider = ({ children, initialQuery = 'harry potter sherlock h
   const [query, setQuery] = useState(initialQuery);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selected, setSelected] = useState('');
 
   useEffect(() => {
     const dataFetch = async () => {
@@ -26,7 +27,7 @@ const BookContextProvider = ({ children, initialQuery = 'harry potter sherlock h
   }, [query]);
 
   return (
-    <BookContext.Provider value={{ bookData, loading, error, query, setQuery }}>
+    <BookContext.Provider value={{ bookData, loading, error, query, setQuery, selected, setSelected }}>
       {children}
     </BookContext.Provider>
   );

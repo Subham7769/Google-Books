@@ -4,7 +4,7 @@ import BookCard from './BookCard';
 
 
 const BookDesk = (props) => {
-    const { bookData, loading, error, query, setQuery } = useContext(BookContext);
+    const { bookData, loading, error, query, setQuery, selected, setSelected } = useContext(BookContext);
 
     console.log(bookData)
       if (loading) {

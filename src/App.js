@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from './Components/Navbar';
-import BookContextProvider from './Context/BookContextProvider';
 import BookContainer from './Components/BookContainer';
 import BookDesk from './Components/BookDesc';
+import BookOverview from './Components/BookOverview';
+import BookContext from './Context/BookContext';
 
 
 const App = () => {
-  return (
-    <BookContextProvider>
-      <Navbar />
-      <BookDesk />
-      <BookContainer />
+  
+  const { bookData, loading, error, query, setQuery, selected, setSelected } = useContext(BookContext);
 
-    </BookContextProvider>
+  return (
+    <>
+      <Navbar />
+      { !selected ? <BookDesk /> : <BookOverview book={bookData[Number(selected)]}/>}
+      <BookContainer />
+    </>
   );
 };
 

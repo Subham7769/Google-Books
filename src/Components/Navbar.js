@@ -14,7 +14,7 @@ import bookMark from '../Assets/bookmark.png'
 
 const Navbar = () => {
 
-  const { bookData, loading, error, query, setQuery } = useContext(BookContext);
+  const { bookData, loading, error, query, setQuery, selected, setSelected } = useContext(BookContext);
 
   const [searchInput, setSearchInput] = useState('');
 
